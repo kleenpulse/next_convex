@@ -8,7 +8,7 @@ export default function Home() {
 			<nav>
 				<Link
 					href="/todo"
-					className="bg-green-400 text-black p-2 text-[20px] sm:text-4xl uppercase font-bold rounded-xl"
+					className="bg-green-400 text-black p-2 text-[20px] sm:text-4xl uppercase font-bold rounded-xl todo-section"
 				>
 					Todo app
 				</Link>
