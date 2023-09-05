@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+body {
+	max-width: 1440px;
+	position: relative;
+	margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #f1f1f1;
+}
+
+@media screen and (min-width: 360px) {
+	body {
+		overflow-x: hidden;
+	}
+}
+
+.null-nothing {
+	background: #022b54;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-shadow: 11px 1px 1px #01162a;
+	letter-spacing: 1rem;
+	user-select: none;
+}
+
+@media screen and (min-width: 800px) {
+	.todo-section {
+		&::before {
+			content: "";
+			position: fixed;
+			bottom: -10rem;
+			left: -10rem;
+			width: 700px;
+			height: 700px;
+			z-index: 1;
+			border-radius: 50%;
+			opacity: 0.2;
+			scale: 0;
+			animation: grow-up 3s 0.4s ease forwards, motionBG 25s ease infinite;
+			background: linear-gradient(45deg, #00ffd5, #0322b0, #5802b5, #ff0000);
+			background-size: 200% 200%;
+			filter: blur(16px);
+		}
+		&::after {
+			content: "";
+			position: fixed;
+			top: -10rem;
+			right: -10rem;
+			width: 700px;
+			height: 700px;
+			z-index: 1;
+			border-radius: 50%;
+			opacity: 0.2;
+			scale: 0;
+			animation: grow-up 3s ease forwards;
+			background: linear-gradient(45deg, #00ffd5, #5802b5, #010b43);
+
+			filter: blur(16px);
+		}
+	}
+}
+@keyframes grow-up {
+	100% {
+		scale: 1;
+	}
+}
+@keyframes motionBG {
+	0% {
+		background-position: 0% 86%;
+	}
+	50% {
+		background-position: 100% 15%;
+	}
+	100% {
+		background-position: 0% 86%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.todo-section {
+		&::before {
+			content: "";
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 0;
+			margin: auto;
+			width: 800px;
+			height: 800px;
+			margin-right: -13rem;
+			z-index: 1;
+			border-radius: 50%;
+			opacity: 0.2;
+			scale: 0;
+			animation: grow-up 3s 0.4s ease forwards, motionBG 25s ease infinite;
+			background: linear-gradient(45deg, #00ffd5, #0322b0, #5802b5, #ff0000);
+			background-size: 200% 200%;
+			filter: blur(16px);
+		}
+	}
+}
