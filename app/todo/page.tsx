@@ -27,18 +27,7 @@ export default function TodoPage() {
 	const doneTask = useMutation(api.todos.doneTodo);
 	const doneTodos = useQuery(api.todos.getDoneTodos);
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-
-		// call the mutation here
-		createTodo({ text });
-
-		setText("");
-	};
-	// convert unix timestamp to date
-	const formatDate = (date: number) => {
-		return new Date(date).toLocaleString();
-	};
+	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
 		if (!todos || todos.length < 1) {
@@ -53,6 +42,26 @@ export default function TodoPage() {
 			setIsDone(false);
 		}
 	}, [doneTodos]);
+
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+	if (!isMounted) {
+		return null;
+	}
+
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
+		// call the mutation here
+		createTodo({ text });
+
+		setText("");
+	};
+	// convert unix timestamp to date
+	const formatDate = (date: number) => {
+		return new Date(date).toLocaleString();
+	};
 
 	return (
 		<section
