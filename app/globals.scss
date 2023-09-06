@@ -30,14 +30,27 @@ body {
 }
 
 .null-nothing {
-	background: #022b54;
+	background: #01305e;
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
-	text-shadow: 11px 1px 1px #01162a;
+	text-shadow: 9px 1px 1px #011d38;
 	letter-spacing: 1rem;
 	user-select: none;
+
+	@media screen and (max-width: 640px) {
+		background: #014683;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		text-shadow: 3px 1px 1px #00213f;
+		position: absolute;
+		top: -3em;
+		font-size: 3rem;
+		line-height: 1.2;
+	}
 }
 
 @media screen and (min-width: 800px) {
