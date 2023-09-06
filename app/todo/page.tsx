@@ -98,7 +98,7 @@ export default function TodoPage() {
 			<div className="flex items-start flex-col gap-4 w-full max-w-3xl sm:text-xl lg:text-2xl ">
 				{!todos || todos.length < 1 ? (
 					<div className="w-full  flex justify-center relative ">
-						<p className="sm:text-[55px] text-3xl uppercase font-black  null-nothing sm:py-6 px-0 sm:leading-[120%] text-center xl:text-[90px] ">
+						<div className="sm:text-[55px] text-3xl uppercase font-black  null-nothing sm:py-6 px-0 sm:leading-[120%] text-center xl:text-[90px] ">
 							<Typewriter
 								options={{
 									strings: [
@@ -111,7 +111,7 @@ export default function TodoPage() {
 									loop: true,
 								}}
 							/>
-						</p>
+						</div>
 					</div>
 				) : (
 					<div className="sm:pb-12 pb-16 my-auto w-full max-sm:my-12 overflow-auto max-sm:mb-32 z-10 backdrop-blur-lg sm:h-[700px]">
